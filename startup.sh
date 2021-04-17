@@ -11,14 +11,14 @@ printf 'Acquiring IP\naddress...' > ${BASH_SOURCE%/*}/.title_txt
 #start ticker (uncomment this line if you are using a ticker)
 #sudo /usr/bin/python ${BASH_SOURCE%/*}/ticker.py &
 
-sleep 30s
+#sleep 30s
 
 #print IP address
 printf '%b\n' '\033[2J\033[:'
 printf 'IP Address: '
 ip route get 8.8.8.8 | awk '{print $7; exit}'
 ip route get 8.8.8.8 | awk '{printf $7}' > ${BASH_SOURCE%/*}/.title_txt
-sleep 10s
+#sleep 10s
 
 #clear screen again
 printf '%b\n' '\033[2J\033[:'
