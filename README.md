@@ -12,23 +12,36 @@ FluxVision is a set of scripts for playing a YouTube playlist on loop on a Raspb
 
 ##### Note:
 * Recommended operating system is Raspbian Jessie, on which FluxVision was developed and stress tested. (Omxplayer was found to randomly hang between videos on Raspbian Wheezy.)
+* Latest tested on Raspberry Pi OS Lite (x86).
+  - Release date: April 4th 2022
+  - System: 32-bit
+  - Kernel version: 5.15
+  - Debian version: 11 (bullseye)
+  - SHA256 file integrity hash: 34987327503fac1076e53f3584f95ca5f41a6a790943f1979262d58d62b04175
+* Original repository: https://github.com/jasoneppink/FluxVision
+* Forked repository: https://github.com/amin24099/FluxVision_final
 
 ## Installation
 
-1. Install youtube-dl
+1. Install yt-dlp (https://github.com/yt-dlp/yt-dlp).
 
+   youtube-dl was downloading videos very slowly from YouTube (~500Kbps); therefore, switched to yt-dlp. 
+
+
+    ~~sudo pip install --upgrade youtube_dl~~
   ```
-  sudo pip install --upgrade youtube_dl
+  sudo wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp
+  sudo chmod a+rx /usr/local/bin/yt-dlp
   ```
-2. Install omxplayer and libav-tools
+2. Install omxplayer and libav-tools.
 
   ```
   sudo apt-get install omxplayer libav-tools
   ```
-3. Download FluxVision files to your Raspberry Pi
+3. Download FluxVision files to your Raspberry Pi.
 
   ```
-  git clone https://www.github.com/jasoneppink/FluxVision
+  git clone https://github.com/timothyle97/FluxVision_final
   ```
 4. Update "config.txt" with your playlist ID and other details.
 
@@ -36,7 +49,7 @@ FluxVision is a set of scripts for playing a YouTube playlist on loop on a Raspb
   cd FluxVision
   nano config.txt
   ```
-5. (optional) Uncomment lines in "startup.sh" if you are using a ticker, skip button, or volume knob
+5. (optional) Uncomment lines in "startup.sh" if you are using a ticker, skip button, or volume knob.
 
   ```
   nano startup.sh
@@ -46,7 +59,7 @@ FluxVision is a set of scripts for playing a YouTube playlist on loop on a Raspb
   ```
   sudo nano /etc/rc.local
   ```
-and add this line so FluxVision starts at boot:
+  and add this line so FluxVision starts at boot:
 
   ```
   sudo -u pi /home/pi/FluxVision/startup.sh
@@ -61,7 +74,3 @@ and add this line so FluxVision starts at boot:
   ```
   sudo reboot
   ```
-
-
-
-![Installation at Silent Barn](/images/installation_shot_1.jpg?raw=true "Installation at Silent Barn")
