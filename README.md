@@ -12,12 +12,13 @@ FluxVision is a set of scripts for playing a YouTube playlist on loop on a Raspb
 
 ##### Note:
 * Recommended operating system is Raspbian Jessie, on which FluxVision was developed and stress tested. (Omxplayer was found to randomly hang between videos on Raspbian Wheezy.)
-* Latest tested on Raspberry Pi OS Lite (x86).
-  - Release date: April 4th 2022
-  - System: 32-bit
-  - Kernel version: 5.15
-  - Debian version: 11 (bullseye)
-  - SHA256 file integrity hash: 34987327503fac1076e53f3584f95ca5f41a6a790943f1979262d58d62b04175
+* Latest tested on Raspberry Pi OS Lite (Legacy)
+  * Release date: April 4th 2022
+  * System: 32-bit
+  * Kernel version: 5.10
+  * Debian version: 10 (buster)
+  * Size: 284MB
+  * SHA256 file integrity hash: 42fd907a0da36b8a8ce9db9cd1cb77746b6a10c4b77f8d0ae0b8065a3b358a37
 * Original repository: https://github.com/jasoneppink/FluxVision
 * Forked repository: https://github.com/amin24099/FluxVision_final
 
